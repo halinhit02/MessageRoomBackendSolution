@@ -1,4 +1,4 @@
-﻿using Application.Users;
+﻿using Application.System.Users;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -6,7 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ViewModel.Users;
+using Utilities;
+using ViewModel.System.Users;
 
 namespace WebAPI.Controllers
 {
@@ -21,6 +22,28 @@ namespace WebAPI.Controllers
         {
             userService = service;
             authorizationService = iAuthorizationService;
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUserById([FromRoute] int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Dữ liệu không hợp lệ.");
+            }
+            var result = await userService.Get(id);
+            return Ok(result);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetUserPaging([FromQuery] UserPagingRequest request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Dữ liệu không hợp lệ.");
+            }
+            var result = await userService.GetPaging(request);
+            return Ok(result);
         }
 
         [HttpPost("register")]
@@ -44,6 +67,50 @@ namespace WebAPI.Controllers
                 return BadRequest("Dữ liệu không hợp lệ.");
             }
             var result = await userService.Login(request);
+            return Ok(result);
+        }
+
+        [HttpPut("authenticate")]
+        [AllowAnonymous]
+        public async Task<IActionResult> ChangePassword([FromBody] PasswordChangeRequest request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Dữ liệu không hợp lệ.");
+            }
+            var result = await userService.ChangePassword(request);
+            return Ok(result);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody] UserUpdateRequest request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Dữ liệu không hợp lệ.");
+            }
+            var authorizationResult = await authorizationService.AuthorizeAsync(User, request.Id.ToString(), PolicyNameConstants.UserIdAuthorization);
+            if (!authorizationResult.Succeeded)
+            {
+                return Forbid();
+            }
+            var result = await userService.Update(request);
+            return Ok(result);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete([FromQuery] BaseUserRequest request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Dữ liệu không hợp lệ.");
+            }
+            var authorizationResult = await authorizationService.AuthorizeAsync(User, request.Id.ToString(), PolicyNameConstants.UserIdAuthorization);
+            if (!authorizationResult.Succeeded)
+            {
+                return Forbid();
+            }
+            var result = await userService.Delete(request);
             return Ok(result);
         }
     }

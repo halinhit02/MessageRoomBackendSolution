@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "messageroom-halinhit",
+  "private_key_id": "a022f23e577d93d4ad599c9f7becb71959c10389",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCapOd3gULYF2Uf\nhvzydNX43niA7UzbFLr7f43gbPb/kjQkNDRIuWbB3n8CszWsWvmcmAjMfNAdtRS5\n5viT/5E0Z3FhGAgP+SskpQx7ccNSueeuRmjSleNgM9He+P7F3Shw8YJKjfF1UR7P\nGEmM08IsvTvqTc+zjU+b1itkQ5x7mMsJcRA13GTnfKKv3ZdbkLQ12LFToHyanNKL\n1T/slff+z5WVNDmldV8wE2saSz3TenreWfntMh8vF/x6Og1npldvV+SxmZUMsV2N\nqm5xXpdmPEioIvxqdMTUHXVmnqqb6/WrGgvGkdO0mmFJVrsqDFh251rsKEj8RlHc\nO0bcRe9dAgMBAAECggEAJf66OCx0Je+pktNxtohqQhk29kZXicRQJJa0Xx2mmihr\n0zFYXz3eN2fZQOqTF2PKzGS2VLed0o65JuvOy14RaRS5UKe841/O79P1eyb6XIr8\nl18JRiQ5l1tkByqaPjcWRpmv721sk+x4a12GRKmKnb9oxyqTC4R+uMUoKBxMiDki\nZ8Y8krhcyXwAryLH52P6rwRf/Jm1pLWhuKREAZpMk/pMbzLvg6aZP5Ob1POWaA17\nwMe7z7hWTqHF9jxZwjVd2s4uvO1mXt6+fqjZvobkF8MpBDNNunvz7SkhZhituPgM\naWFYQYSU/92q4RmXrRuXiyzuUzvKZWB7hj7JxRlO6QKBgQDNPL5vapDJVc8cek3B\nYiU4hcy3m4SyfGwSPTHkEn7DUbe9ftWMzzaZvjTbdWhTkDHDiXBwrXpZy+Qa57ru\ndq8cjlfOGg8NaJCswujAbje4wkTe62vwFAXMoZ9AOuTdQu9uhHEmSWR/BdORZOAr\n+w5oPJxS+rCUj9ktBn68klC1YwKBgQDA5LHLvK99pnXwnd2QTb+FsCAWUjwfnTtt\noT9o2+4WyEQRTHePoz2UmfO/XOgTkr9KlKyKHblkbBKkvm96CBil38J47F/GDg79\nVmuxhRjmnHljUwQH02bi8F6fxIKzR4iKj/nr9j9ycBfyaX7Yl6YCLlRrTqG/Jwfa\n7SqG20lEPwKBgERzeAhtAHFGH1eeKwTOmR9q8MZkJjPpb5n9swAgcwrt3FxlSxA1\npD5OxA5V8D++nfpbgpbyJRaB/EhE9YHHL8xUZVCmPFL6hxY3w606lXcXxCSdXFis\nNOr1FMo1WlO5mWXA4oQkglIjPVcG0AWbLEjzviem2PITsBlmSyrVmfmFAoGBAI4h\ndSisVZr+JvUvPWzw/OhjCKGp4odg8cMsB28abur2kcE1WPvLyrpOXh5pNNAHV1B7\nEE+M62glge9GKxn+ETtYDxHPChsDjOP648ugSOLT9VXMe7HQgYVCnFaZE71KPj/r\nKrpFbibClcKXHVI3G6mLvcR74g7ZkZ4tFyLbPbc9AoGBAIrLVotmkNUrjr8Lq/4y\n9Mmu39t3W4nqfPKkRuSL21Kid/ZoegKbzJGL1pWfX09DRmjZYjjkSFFauRXZkNL0\ng1LWKGWWu63NVJKQgg3sYEEgjbVUTGuVtDow0qhC0/DR1+Ie14oeDPtV9Z1MFuJG\nBJNf2WIMwuRl1PyAOeAWaKiD\n-----END PRIVATE KEY-----\n",
+  "client_email": "messageroom-halinhit@appspot.gserviceaccount.com",
+  "client_id": "110380123382041426707",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/messageroom-halinhit%40appspot.gserviceaccount.com"
+}

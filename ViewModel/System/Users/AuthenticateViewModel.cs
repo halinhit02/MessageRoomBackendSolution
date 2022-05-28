@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ViewModel.Users
+namespace ViewModel.System.Users
 {
     public class AuthenticateViewModel
     {

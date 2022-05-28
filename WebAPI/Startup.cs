@@ -1,6 +1,12 @@
-using Application.Users;
+using Application.Catalog.Attachments;
+using Application.Catalog.Conversations;
+using Application.Catalog.Messages;
+using Application.Catalog.Participants;
+using Application.System.CloudStorage;
+using Application.System.Users;
 using MessageRoomSolution.Data.EF;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -16,6 +22,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPI.ViewModels;
 
 namespace WebAPI
 {
@@ -36,7 +43,13 @@ namespace WebAPI
                 options.UseSqlServer(Configuration.GetConnectionString("MessageRoom"));
             });
             //Declare DI
+            services.AddSingleton<IAuthorizationHandler, UserAuthorizationHandler>();
+            services.AddSingleton<ICloudStorage, GoogleCloudStorage>();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IAttachmentService, AttachmentService>();
+            services.AddTransient<IMessageService, MessageService>();
+            services.AddTransient<IConversationService, ConversationService>();
+            services.AddTransient<IParticipantService, ParticipantService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -84,7 +97,6 @@ namespace WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
             app.UseRouting();
 
             app.UseAuthorization();
